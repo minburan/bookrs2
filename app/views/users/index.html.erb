@@ -1,0 +1,12 @@
+<!--共通部分-->
+<%= render 'books/common', book: @book %>
+
+<h2>Users</h2>
+
+<% @user.each do |user| %>
+  <div>
+  <p>image:<%= image_tag user.get_profile_image(100,100) %></p>
+  <p>name:<%= user.name %></p>
+  <p><%= link_to "show", books_path %></p>
+  </div>
+<% end %>

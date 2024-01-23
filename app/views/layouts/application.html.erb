@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to 'Home', user_path(current_user.id) %>
+        </li>
+        <li>
+          <%= link_to 'Users', users_path %>
+        </li>
+        <li>
+          <%= link_to 'books', books_path %>
+        </li>
+        <li>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+      <nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class = "container">
+          <a class = "navbar-brand" href = "/">
+            <span>Bookers</span>
+          </a>
+          <button class ="navbar-toggler" type= "button" date-toggle ="collapse" date-target = "#navbarNavDropdown" aria-controls= "navbarNavDropdown" aria-expanded="false" aria-label ="Toggle navigation">
+            <span class ="navbar-toggler-icon"></span>
+          </button>
+        <div class ="collapse navbar-collapse" id = "navbarNavDropdown">
+          <ul class = "collapse navbar-nav ml-auto">
+            <li>
+              <a class = "nav-link text-light" href = "/">
+               "Home"
+              </a>
+            </li>
+            <li>
+              <a class ="nav-link text-light" href = "/home/about">
+                "About"
+              </a>
+            </li>
+            <li>
+              <a class = "nav-link text-light" href = "/users/sign-up">
+                "Sign up"
+              </a>
+            </li>
+            <li>
+              <a class ="nav-link text-light" href = "/users/sign-in">
+                "Log in"
+              </a>
+            </li>
+          </ul>  
+        </div>    
+        </div>    
+      <% end %>
+    </header>
+
+    <main>
+      <div>
+        <%= flash[:notice] %>
+      </div>
+    </main>
+    <%= yield %>
+
+
+    <footer>
+      <p>CopyRight Infatop.inc</p>
+    </footer>
+  </body>
+</html>
