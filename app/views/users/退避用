@@ -1,0 +1,14 @@
+              <%= link_to "About", homes_about_path, class: 'nav-link text-light' %>
+              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-light' %>
+              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-light' %>
+
+              <%= link_to 'Home', user_path(current_user.id), class: 'nav-link text-light' %>
+              <%= link_to 'Users', users_path, class: 'nav-link text-light' %>
+              <%= link_to 'books', books_path, class: 'nav-link text-light' %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+              
+              
+                <p><%= link_to "アプデ", edit_user_path(user) %></p>
+                
+                
+                       <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前" %>
