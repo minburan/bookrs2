@@ -56,10 +56,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class ="nav-link text-light" href="homes/about">
+              <%= link_to home_about_path, class: "nav-link text-light" do%>
                 <i class="fa-solid fa-link"></i>
                 About
-              </a>
+              <% end %>
             </li>
             <li class="nav-item">
               <%= link_to new_user_registration_path, class: 'nav-link text-light' do %>
@@ -70,7 +70,7 @@
             <li class="nav-item">
               <%= link_to new_user_session_path, class: 'nav-link text-light' do %>
                 <i class="fa-solid fa-right-to-bracket"></i>
-                Sign in
+                Log in
               <% end %>
             </li>
            </ul>

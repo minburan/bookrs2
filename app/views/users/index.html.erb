@@ -19,13 +19,15 @@
         <% @users.each do |user| %>
           <tr>
             <td>
-              <%= image_tag user.get_profile_image(100,100) %>
+               <%= image_tag user.get_profile_image(100,100) %>
             </td>
             <td>
               <%= user.name %>
             </td>
             <td>
-              <%= link_to "show", books_path %>
+              <%= link_to user_path(user) do%>
+                Show
+              <% end %>
             </td>
           </tr>
         <% end %>
